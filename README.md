@@ -83,19 +83,19 @@ When a plane is detected, you can tap on the detected plane to place a cube on i
 
 This samples shows how to acquire and manipulate textures obtained from AR Foundation on the CPU. Most textures in ARFoundation (e.g., the pass-through video supplied by the `ARCameraManager`, and the human depth and human stencil buffers provided by the `AROcclusionManager`) are GPU textures. Computer vision or other CPU-based applications often require the pixel buffers on the CPU, which would normally involve an expensive GPU readback. AR Foundation provides an API for obtaining these textures on the CPU for further processing, without incurring the costly GPU readback.
 
-The relevant script is [`CpuImageSample.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/CpuImageSample.cs).
+The relevant script is [`CpuImageSample.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/CpuImageSample.cs).
 
-The resolution of the camera image is affected by the camera's configuration. The current configuration is indicated at the bottom left of the screen inside a dropdown box which lets you select one of the supported camera configurations. The [`CameraConfigController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/CameraConfigController.cs) demonstrates enumerating and selecting a camera configuration. It is on the `CameraConfigs` GameObject.
+The resolution of the camera image is affected by the camera's configuration. The current configuration is indicated at the bottom left of the screen inside a dropdown box which lets you select one of the supported camera configurations. The [`CameraConfigController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/CameraConfigController.cs) demonstrates enumerating and selecting a camera configuration. It is on the `CameraConfigs` GameObject.
 
 Where available (currently iOS 13+ only), the human depth and human stencil textures are also available on the CPU. These appear inside two additional boxes underneath the camera's image.
 
 ### Basic Light Estimation
 
-Demonstrates basic light estimation information from the camera frame. You should find values for "Ambient Intensity" and "Ambient Color" on screen. The relevant script is [`BasicLightEstimation.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/BasicLightEstimation.cs) script.
+Demonstrates basic light estimation information from the camera frame. You should find values for "Ambient Intensity" and "Ambient Color" on screen. The relevant script is [`BasicLightEstimation.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/BasicLightEstimation.cs) script.
 
 ### HDR Light Estimation
 
-This sample attempts to read HDR lighting information. You should find values for "Ambient Intensity", "Ambient Color", "Main Light Direction", "Main Light Intensity Lumens", "Main Light Color", and "Spherical Harmonics". Most devices only support a subset of these 6, so some will be listed as "Unavailable." The relevant script is [`HDRLightEstimation.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/HDRLightEstimation.cs) script.
+This sample attempts to read HDR lighting information. You should find values for "Ambient Intensity", "Ambient Color", "Main Light Direction", "Main Light Intensity Lumens", "Main Light Color", and "Spherical Harmonics". Most devices only support a subset of these 6, so some will be listed as "Unavailable." The relevant script is [`HDRLightEstimation.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/HDRLightEstimation.cs) script.
 
 On iOS, this is only available when face tracking is enabled and requires a device that supports face tracking (such as an iPhone X, XS or 11). When available, a virtual arrow appears in front of the camera which indicates the estimated main light direction. The virtual light direction is also updated, so that virtual content appears to be lit from the direction of the real light source.
 
@@ -125,7 +125,7 @@ This sample shows how to toggle the Image Stabilization feature on and off, and 
 
 ### Toggle Plane Detection
 
-This sample shows how to toggle plane detection on and off. When off, it will also hide all previously detected planes by disabling their GameObjects. Refer to [`PlaneDetectionController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/PlaneDetectionController.cs).
+This sample shows how to toggle plane detection on and off. When off, it will also hide all previously detected planes by disabling their GameObjects. Refer to [`PlaneDetectionController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/PlaneDetectionController.cs).
 
 ### Plane Masking
 
@@ -183,13 +183,13 @@ This sample uses the front-facing (i.e., selfie) camera.
 
 ### Face Regions (ARCore)
 
-"Face regions" are an ARCore-specific feature which provides pose information for specific "regions" on the detected face, e.g., left eyebrow. In this example, axes are drawn at each face region. Refer to the [`ARCoreFaceRegionManager.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/ARCoreFaceRegionManager.cs).
+"Face regions" are an ARCore-specific feature which provides pose information for specific "regions" on the detected face, e.g., left eyebrow. In this example, axes are drawn at each face region. Refer to the [`ARCoreFaceRegionManager.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/ARCoreFaceRegionManager.cs).
 
 This sample uses the front-facing (i.e., selfie) camera.
 
 ### Blend Shapes (ARKit)
 
-"Blend shapes" are an ARKit-specific feature which provides information about various facial features on a scale of 0..1. For instance, "wink" and "frown". In this sample, blend shapes are used to puppet a cartoon face which is displayed over the detected face. Refer to the [`ARKitBlendShapeVisualizer.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/ARKitBlendShapeVisualizer.cs).
+"Blend shapes" are an ARKit-specific feature which provides information about various facial features on a scale of 0..1. For instance, "wink" and "frown". In this sample, blend shapes are used to puppet a cartoon face which is displayed over the detected face. Refer to the [`ARKitBlendShapeVisualizer.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/ARKitBlendShapeVisualizer.cs).
 
 This sample uses the front-facing (i.e., selfie) camera.
 
@@ -213,13 +213,13 @@ This feature requires a device with a TrueDepth camera and an A12 bionic chip ru
 
 ### Body Tracking 2D
 
-This sample demonstrates 2D screen space body tracking. A 2D skeleton is generated when a person is detected. Refer to the [`ScreenSpaceJointVisualizer.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/ScreenSpaceJointVisualizer.cs) script.
+This sample demonstrates 2D screen space body tracking. A 2D skeleton is generated when a person is detected. Refer to the [`ScreenSpaceJointVisualizer.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/ScreenSpaceJointVisualizer.cs) script.
 
 This sample requires a device with an A12 bionic chip running iOS 13 or above.
 
 ### Body Tracking 3D
 
-This sample demonstrates 3D world space body tracking. A 3D skeleton is generated when a person is detected. Refer to the [`HumanBodyTracker.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/HumanBodyTracker.cs) script.
+This sample demonstrates 3D world space body tracking. A 3D skeleton is generated when a person is detected. Refer to the [`HumanBodyTracker.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/HumanBodyTracker.cs) script.
 
 This sample requires a device with an A12 bionic chip running iOS 13 or above.
 
@@ -233,7 +233,7 @@ This sample has two UI components:
 
 ## Anchors
 
-This sample shows how to create anchors as the result of a raycast hit. The "Clear Anchors" button removes all created anchors. Refer to the [`AnchorCreator.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/AnchorCreator.cs) script.
+This sample shows how to create anchors as the result of a raycast hit. The "Clear Anchors" button removes all created anchors. Refer to the [`AnchorCreator.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/AnchorCreator.cs) script.
 
 This script can create two kinds of anchors:
 1. If a feature point is hit, it creates a normal anchor at the hit pose using the `GameObject.AddComponent<ARAnchor>()` method.
@@ -278,7 +278,7 @@ This sample demonstrates raw texture depth images from different methods.
 
 ## Check Support
 
-Demonstrates checking for AR support and logs the results to the screen. The relevant script is [`SupportChecker.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/SupportChecker.cs).
+Demonstrates checking for AR support and logs the results to the screen. The relevant script is [`SupportChecker.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/SupportChecker.cs).
 
 ## Configuration Chooser
 
@@ -312,7 +312,7 @@ This sample contains the code required to query for an iOS device's thermal stat
 
 An `ARWorldMap` is an ARKit-specific feature which lets you save a scanned area. ARKit can optionally relocalize to a saved world map at a later time. This can be used to synchronize multiple devices to a common space, or for curated experiences specific to a location, such as a museum exhibition or other special installation. Read more about world maps [here](https://developer.apple.com/documentation/arkit/arworldmap). A world map will store most types of trackables, such as reference points and planes.
 
-The [`ARWorldMapController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/ARWorldMapController.cs) performs most of the logic in this sample.
+The [`ARWorldMapController.cs`](https://github.com/Unity-Technologies/arfoundation-samples/blob/master/Assets/Scripts/Runtime/ARWorldMapController.cs) performs most of the logic in this sample.
 
 This sample requires iOS 12 or above.
 
